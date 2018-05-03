@@ -7,11 +7,19 @@ const PlayerStats = props => (
     <h3>Player statistics:</h3>
     <ul>
       <li key="health">
-        Health:{" "}
+        Health:
         <ProgressBar
           now={props.health}
           label={props.health + "/100"}
           bsStyle="danger"
+        />
+      </li>
+      <li key="fatigue">
+        Fatigue:
+        <ProgressBar
+          now={props.fatigue}
+          label={props.fatigue + "/100"}
+          bsStyle="info"
         />
       </li>
       <li key="cash">

@@ -3,7 +3,7 @@ import Game from "./Game";
 describe("Player operations", () => {
   let game;
   beforeEach(() => {
-    game = new Game();
+    game = new Game(() => {});
   });
 
   it("creates default player", () => {
@@ -30,4 +30,14 @@ describe("Player operations", () => {
     expect(game.player.status).toContain("dead");
     expect(game.player.canFight()).toBeFalsy();
   });
+
+  it("restores defaults after resurect", () => {
+    game.player.health = 1;
+    game.player.fight(game.getNewMonster("dragon"));
+    expect(game.player.canResurect()).toBeTruthy();
+    game.player.resurect();
+    expect(game.player.health).toEqual(100);
+    expect(game.player.cash).toEqual(10);
+
+  })
 });

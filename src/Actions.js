@@ -19,30 +19,45 @@ const Actions = props => {
   const definitions = [
     {
       callback: () => {
-        props.updateGame(
-          props.game.player.fight(props.game.getNewMonster("lama"))
-        );
+        props.game.player.fight(props.game.getNewMonster("lama"));
       },
       text: "Fight Lama",
       isDisabled: !props.game.player.canFight()
     },
     {
       callback: () => {
-        props.updateGame(
-          props.game.player.fight(props.game.getNewMonster("bear"))
-        );
+        props.game.player.fight(props.game.getNewMonster("bear"));
       },
       text: "Fight Bear",
       isDisabled: !props.game.player.canFight()
     },
     {
       callback: () => {
-        props.updateGame(
-          props.game.player.fight(props.game.getNewMonster("dragon"))
-        );
+        props.game.player.fight(props.game.getNewMonster("dragon"));
       },
       text: "Fight Dragon",
       isDisabled: !props.game.player.canFight()
+    },
+    {
+      callback: () => {
+        props.game.player.eat();
+      },
+      text: "Eat (5 cash)",
+      isDisabled: !props.game.player.canEat()
+    },
+    {
+      callback: () => {
+        props.game.player.sleep();
+      },
+      text: "Sleep (1 cash)",
+      isDisabled: !props.game.player.canSleep()
+    },
+    {
+      callback: () => {
+        props.game.player.resurect();
+      },
+      text: "Resurect",
+      isDisabled: !props.game.player.canResurect()
     }
   ];
   return (
@@ -57,7 +72,6 @@ const Actions = props => {
 
 Actions.propTypes = {
   game: PropTypes.object.isRequired,
-  updateGame: PropTypes.func.isRequired
 };
 
 export default Actions;

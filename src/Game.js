@@ -13,13 +13,26 @@ class Player {
   constructor(game) {
     this.game = game;
     this.health = 100;
+    this.fatigue = 0;
     this.cash = 10;
     this.status = "";
+
+    this.fatigueAutoRestore = setInterval(()=> {
+      if (this.fatigue < 100)
+      {
+        this.fatigue = this.fatigue += 1;
+        this.game.update();
+      }
+    }, 100);
+  }
+  isAlive = () => {
+    return this.health > 0;
   }
   fight = monster => {
     const hitpoints = monster.getHitpoints();
     this.cash = this.cash + monster.cash;
     this.health = this.health - hitpoints;
+    this.fatigue = this.fatigue - 20;
     if (this.health <= 0) {
       this.health = 0;
       this.status = "You're dead";
@@ -30,15 +43,39 @@ class Player {
                       You gained ${
                         monster.cash
                       } gold pieces from the monster.`);
-    return this.game;
+    this.game.update();
   };
   canFight = () => {
-    return this.health > 0;
+    return this.isAlive() && this.fatigue > 20;
   };
+  eat = () => {
+    this.cash -= 5;
+    this.health = 100;
+    this.game.update();
+  }
+  canEat = () => {
+    return this.isAlive() && this.cash >= 5;
+  }
+  sleep = () => {
+    this.cash -= 1;
+    this.fatigue = 100;
+    this.game.update();
+  }
+  canSleep = () => {
+    return this.isAlive() && this.cash >= 1;
+  }
+  resurect = () => {
+    delete this.game.player;
+    this.game.player = new Player(this.game);
+    this.game.update();
+  }
+  canResurect = () => {
+    return !this.isAlive()
+  }
 }
 
 class Game {
-  constructor() {
+  constructor(updateCallback) {
     this.player = new Player(this);
     this.log = [];
     this.monsterDifinitions = new Map();
@@ -57,6 +94,7 @@ class Game {
       power: 300,
       cash: 100
     });
+    this.update = updateCallback;
   }
   addLog = text => {
     this.log.push(text);

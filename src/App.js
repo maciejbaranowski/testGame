@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      game: new Game()
+      game: new Game(() => {
+        this.setState({ game: this.state.game });
+      })
     };
   }
   render() {
@@ -22,9 +24,6 @@ class App extends Component {
           <Col md={4}>
             <Actions
               game={this.state.game}
-              updateGame={newState => {
-                this.setState({ game: newState });
-              }}
             />
           </Col>
           <Col md={4}>
