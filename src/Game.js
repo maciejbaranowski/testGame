@@ -1,22 +1,35 @@
 class Player {
-  constructor() {
+  constructor(game) {
+    this.game = game;
     this.health = 100;
     this.cash = 10;
     this.status = "";
   }
+  fight = () => {
+    this.game.addLog("Fight is over!" + Math.random());
+    this.cash = this.cash + 2;
+    this.health = this.health - Math.round(Math.random() * 10 + 1);
+    if (this.health <= 0) {
+      this.health = 0;
+      this.status = "You're dead";
+    }
+    return this.game;
+  };
+  canFight = () => {
+    return this.health > 0;
+  };
 }
 
 class Game {
   constructor() {
-    this.player = new Player();
+    this.player = new Player(this);
+    this.log = [];
   }
-  fight = () => {
-    this.player.cash = this.player.cash + 2;
-    this.player.health = this.player.health - Math.round(Math.random() * 10 + 1);
-    if (this.player.health <= 0) {
-      this.player.status = "You're dead";
+  addLog = text => {
+    this.log.push(text);
+    if (this.log.length > 10) {
+      this.log.shift();
     }
-    return this;
   };
 }
 
