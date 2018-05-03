@@ -131,9 +131,9 @@ class Game {
     this.update = updateCallback;
   }
   addLog = text => {
-    this.log.push(text);
+    this.log.unshift(text);
     if (this.log.length > LOG_LENGTH) {
-      this.log.shift();
+      this.log.pop();
     }
   };
   getNewMonster = name => {

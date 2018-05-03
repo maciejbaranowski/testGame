@@ -12,7 +12,10 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-           📊 Player statistics:
+          <span>
+             📊
+          </span>
+           Player statistics:
         </h3>
         <ul
           className="list-group"
@@ -20,7 +23,10 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            🧡 Health
+            <span>
+              🧡
+            </span>
+             Health
             <div
               className="progress"
             >
@@ -43,7 +49,10 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            😫 Fatigue
+            <span>
+              😫
+            </span>
+             Fatigue
             <div
               className="progress"
             >
@@ -66,7 +75,10 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            💰 Cash 
+            <span>
+              💰
+            </span>
+             Cash 
             <span
               className="badge"
             >
@@ -76,7 +88,11 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            ️ ⚔️ Fighting skill 
+            ️ 
+            <span>
+              ⚔️
+            </span>
+             Fighting skill 
             <span
               className="badge"
             >
@@ -97,7 +113,11 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-           ⚔️ Actions:
+           
+          <span>
+            ⚔️
+          </span>
+           Actions:
         </h3>
         <div
           className="panel panel-default"
@@ -110,6 +130,18 @@ exports[`renders as before 1`] = `
           <div
             className="panel-body"
           >
+            <div
+              hidden={true}
+            >
+              <button
+                className="btn btn-warning"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Fight Pink rabbit (he won't hurt you!)
+              </button>
+            </div>
             <div
               hidden={false}
             >
@@ -229,10 +261,14 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-           📜 Game log:
+           
+          <span>
+            📜 
+          </span>
+           Game log:
         </h3>
         <ul
-          className="list-group"
+          className="gradientOverlay list-group"
         />
       </div>
     </div>
