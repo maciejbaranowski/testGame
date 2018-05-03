@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as before 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <ul>
+      <li>
+        Health: 
+        100
+      </li>
+      <li>
+        cash: 
+        10
+      </li>
+    </ul>
+    
+  </div>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Fight!
+    </button>
+  </div>
+</div>
+`;
