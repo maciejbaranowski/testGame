@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem } from "react-bootstrap";
 
 const Log = props => (
   <div>
-    <h3> 📜 Game log:</h3>
+    <h3> <span>📜 </span> Game log:</h3>
     <ListGroup>
       {props.log.map((logText, i) => {
         return <ListGroupItem key={i} active={i === props.log.length - 1}>{logText}</ListGroupItem>;

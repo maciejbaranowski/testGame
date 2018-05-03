@@ -1,8 +1,6 @@
 class Monster {
   constructor(def) {
-    this.name = def.name;
-    this.power = def.power;
-    this.cash = def.cash;
+    Object.assign(this,def);
   }
   getHitpoints = () => {
     return Math.round(Math.random() * this.power + this.power);
@@ -35,7 +33,11 @@ class Player {
     const hitpoints = Math.max(monster.getHitpoints() - this.skills.fight, 0);
     this.health = this.health - hitpoints;
     this.fatigue = this.fatigue - 20;
-    
+    if(monster.special) {
+      this.game.addLog("Small Pink Rabbit not only gives you some cash, but also heals you!");
+      monster.special(this.game);
+    };
+
     if (this.health <= 0) {
       this.health = 0;
       this.status = "You're dead";
@@ -91,6 +93,10 @@ class Player {
   canTrain = () => {
     return this.isAlive() && this.cash >= 10 && this.fatigue >= 50;
   }
+
+  rabbitFightEnabled = () => {
+    return this.health == 1; 
+  }
 }
 
 const LOG_LENGTH = 5;
@@ -113,6 +119,14 @@ class Game {
       name: "Dragon",
       power: 100,
       cash: 100
+    });
+    this.monsterDifinitions.set("rabbit", {
+      name: "Rabbit",
+      power: 0,
+      cash: 50,
+      special: game => {
+        game.player.health = 100;
+      }
     });
     this.update = updateCallback;
   }

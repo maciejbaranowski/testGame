@@ -52,4 +52,13 @@ describe("Player operations", () => {
     game.player.sleep();
     expect(game.player.fatigue).toEqual(100);
   })
+
+  it("has rabbit easter egg", () => {
+    expect(game.player.rabbitFightEnabled()).toBeFalsy();
+    game.player.health = 1;
+    expect(game.player.rabbitFightEnabled()).toBeTruthy();
+    game.player.fight(game.getNewMonster("rabbit"));
+    expect(game.player.health).toEqual(100);
+    expect(game.player.cash).toEqual(60);
+  })
 });

@@ -34,6 +34,15 @@ const Actions = props => {
       elements: [
         {
           callback: () => {
+            props.game.player.fight(props.game.getNewMonster("rabbit"));
+          },
+          text: "Fight Pink rabbit (he won't hurt you!)",
+          isDisabled: !props.game.player.canFight(),
+          isHidden: !props.game.player.rabbitFightEnabled(),
+          style: "warning"
+        },
+        {
+          callback: () => {
             props.game.player.fight(props.game.getNewMonster("lama"));
           },
           text: "Fight Lama",
@@ -103,7 +112,7 @@ const Actions = props => {
   ];
   return (
     <div>
-      <h3> ⚔️ Actions:</h3>
+      <h3> <span>⚔️</span> Actions:</h3>
       {definitions.map((defgroup, i) => {
         return (
           <Panel key={i}>
