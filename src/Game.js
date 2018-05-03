@@ -93,6 +93,7 @@ class Player {
   }
 }
 
+const LOG_LENGTH = 5;
 class Game {
   constructor(updateCallback) {
     this.player = new Player(this);
@@ -117,7 +118,7 @@ class Game {
   }
   addLog = text => {
     this.log.push(text);
-    if (this.log.length > 10) {
+    if (this.log.length > LOG_LENGTH) {
       this.log.shift();
     }
   };

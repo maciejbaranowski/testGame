@@ -12,7 +12,7 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-          Player statistics:
+           📊 Player statistics:
         </h3>
         <ul
           className="list-group"
@@ -20,7 +20,7 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            Health
+            🧡 Health
             <div
               className="progress"
             >
@@ -43,7 +43,7 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            Fatigue
+            😫 Fatigue
             <div
               className="progress"
             >
@@ -66,7 +66,7 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            Cash 
+            💰 Cash 
             <span
               className="badge"
             >
@@ -76,7 +76,7 @@ exports[`renders as before 1`] = `
           <li
             className="list-group-item"
           >
-            Fighting skill 
+            ️ ⚔️ Fighting skill 
             <span
               className="badge"
             >
@@ -97,7 +97,7 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-          Actions:
+           ⚔️ Actions:
         </h3>
         <div
           className="panel panel-default"
@@ -229,7 +229,7 @@ exports[`renders as before 1`] = `
     >
       <div>
         <h3>
-          Game log:
+           📜 Game log:
         </h3>
         <ul
           className="list-group"

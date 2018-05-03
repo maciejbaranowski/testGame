@@ -1,13 +1,20 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ProgressBar, Badge, Alert, Fade, ListGroup, ListGroupItem } from "react-bootstrap";
+import {
+  ProgressBar,
+  Badge,
+  Alert,
+  Fade,
+  ListGroup,
+  ListGroupItem
+} from "react-bootstrap";
 
 const PlayerStats = props => (
   <div>
-    <h3>Player statistics:</h3>
+    <h3> 📊 Player statistics:</h3>
     <ListGroup>
       <ListGroupItem key="health">
-        Health
+        🧡 Health
         <ProgressBar
           now={props.health}
           label={props.health + "/100"}
@@ -15,7 +22,7 @@ const PlayerStats = props => (
         />
       </ListGroupItem>
       <ListGroupItem key="fatigue">
-        Fatigue
+        😫 Fatigue
         <ProgressBar
           now={props.fatigue}
           label={props.fatigue + "/100"}
@@ -23,10 +30,10 @@ const PlayerStats = props => (
         />
       </ListGroupItem>
       <ListGroupItem key="cash">
-        Cash <Badge>{props.cash}</Badge>
+        💰 Cash <Badge>{props.cash}</Badge>
       </ListGroupItem>
       <ListGroupItem key="skills">
-        Fighting skill <Badge>{props.skills.fight}</Badge>
+        ️ ⚔️ Fighting skill <Badge>{props.skills.fight}</Badge>
       </ListGroupItem>
     </ListGroup>
     <Fade in={props.status.length > 0}>

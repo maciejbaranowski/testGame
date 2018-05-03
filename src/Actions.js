@@ -103,7 +103,7 @@ const Actions = props => {
   ];
   return (
     <div>
-      <h3>Actions:</h3>
+      <h3> ⚔️ Actions:</h3>
       {definitions.map((defgroup, i) => {
         return (
           <Panel key={i}>
