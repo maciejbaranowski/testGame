@@ -38,6 +38,18 @@ describe("Player operations", () => {
     game.player.resurect();
     expect(game.player.health).toEqual(100);
     expect(game.player.cash).toEqual(10);
+  })
 
+  it("restores health when eating", () => {
+    game.player.health = 1;
+    expect(game.player.canEat()).toBeTruthy();
+    game.player.eat();
+    expect(game.player.health).toEqual(100);
+  })
+  it("restores fatigue when sleeping", () => {
+    game.player.fatigue = 1;
+    expect(game.player.canSleep()).toBeTruthy();
+    game.player.sleep();
+    expect(game.player.fatigue).toEqual(100);
   })
 });
