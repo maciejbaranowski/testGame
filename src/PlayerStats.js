@@ -19,7 +19,7 @@ const PlayerStats = props => (
         <ProgressBar
           now={props.fatigue}
           label={props.fatigue + "/100"}
-          bsStyle="info"
+          bsStyle="success"
         />
       </li>
       <li key="cash">

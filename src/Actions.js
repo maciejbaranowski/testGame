@@ -3,8 +3,8 @@ import React from "react";
 import { Button } from "react-bootstrap";
 
 const Action = props => (
-  <div>
-    <Button onClick={props.callback} disabled={props.isDisabled}>
+  <div hidden={props.isHidden}>
+    <Button onClick={props.callback} disabled={props.isDisabled} bsStyle={props.style}>
       {props.text}
     </Button>
   </div>
@@ -12,8 +12,16 @@ const Action = props => (
 
 Action.propTypes = {
   callback: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  style: PropTypes.string,
+  isHidden : PropTypes.bool,
+  isDisabled : PropTypes.bool
 };
+Action.defaultProps = {
+  isHidden: false,
+  isDisabled: false,
+  style: "default"
+}
 
 const Actions = props => {
   const definitions = [
@@ -22,42 +30,48 @@ const Actions = props => {
         props.game.player.fight(props.game.getNewMonster("lama"));
       },
       text: "Fight Lama",
-      isDisabled: !props.game.player.canFight()
+      isDisabled: !props.game.player.canFight(),
+      style: "warning"
     },
     {
       callback: () => {
         props.game.player.fight(props.game.getNewMonster("bear"));
       },
       text: "Fight Bear",
-      isDisabled: !props.game.player.canFight()
+      isDisabled: !props.game.player.canFight(),
+      style: "warning"
     },
     {
       callback: () => {
         props.game.player.fight(props.game.getNewMonster("dragon"));
       },
       text: "Fight Dragon",
-      isDisabled: !props.game.player.canFight()
+      isDisabled: !props.game.player.canFight(),
+      style: "warning"
     },
     {
       callback: () => {
         props.game.player.eat();
       },
       text: "Eat (5 cash)",
-      isDisabled: !props.game.player.canEat()
+      isDisabled: !props.game.player.canEat(),
+      style: "success"
     },
     {
       callback: () => {
         props.game.player.sleep();
       },
       text: "Sleep (1 cash)",
-      isDisabled: !props.game.player.canSleep()
+      isDisabled: !props.game.player.canSleep(),
+      style: "success"
     },
     {
       callback: () => {
         props.game.player.resurect();
       },
       text: "Resurect",
-      isDisabled: !props.game.player.canResurect()
+      isHidden: !props.game.player.canResurect(),
+      style: "danger"
     }
   ];
   return (
