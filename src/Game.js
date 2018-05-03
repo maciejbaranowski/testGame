@@ -105,12 +105,12 @@ class Game {
     });
     this.monsterDifinitions.set("bear", {
       name: "Bear",
-      power: 40,
+      power: 30,
       cash: 10
     });
     this.monsterDifinitions.set("dragon", {
       name: "Dragon",
-      power: 300,
+      power: 100,
       cash: 100
     });
     this.update = updateCallback;

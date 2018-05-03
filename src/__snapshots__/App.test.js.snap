@@ -100,88 +100,127 @@ exports[`renders as before 1`] = `
           Actions:
         </h3>
         <div
-          hidden={false}
+          className="panel panel-default"
         >
-          <button
-            className="btn btn-warning"
-            disabled={true}
-            onClick={[Function]}
-            type="button"
+          <div
+            className="panel-heading"
           >
-            Fight Lama
-          </button>
+            Fighting
+          </div>
+          <div
+            className="panel-body"
+          >
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-warning"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Fight Lama
+              </button>
+            </div>
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-warning"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Fight Bear
+              </button>
+            </div>
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-warning"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Fight Dragon
+              </button>
+            </div>
+          </div>
         </div>
         <div
-          hidden={false}
+          className="panel panel-default"
         >
-          <button
-            className="btn btn-warning"
-            disabled={true}
-            onClick={[Function]}
-            type="button"
+          <div
+            className="panel-heading"
           >
-            Fight Bear
-          </button>
+            Resting
+          </div>
+          <div
+            className="panel-body"
+          >
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-success"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Eat (5 cash)
+              </button>
+            </div>
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-success"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Sleep (1 cash)
+              </button>
+            </div>
+            <div
+              hidden={false}
+            >
+              <button
+                className="btn btn-success"
+                disabled={true}
+                onClick={[Function]}
+                type="button"
+              >
+                Train fighting (10 cash)
+              </button>
+            </div>
+          </div>
         </div>
         <div
-          hidden={false}
+          className="panel panel-default"
         >
-          <button
-            className="btn btn-warning"
-            disabled={true}
-            onClick={[Function]}
-            type="button"
+          <div
+            className="panel-heading"
           >
-            Fight Dragon
-          </button>
-        </div>
-        <div
-          hidden={false}
-        >
-          <button
-            className="btn btn-success"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
+            Other
+          </div>
+          <div
+            className="panel-body"
           >
-            Eat (5 cash)
-          </button>
-        </div>
-        <div
-          hidden={false}
-        >
-          <button
-            className="btn btn-success"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
-          >
-            Sleep (1 cash)
-          </button>
-        </div>
-        <div
-          hidden={false}
-        >
-          <button
-            className="btn btn-success"
-            disabled={true}
-            onClick={[Function]}
-            type="button"
-          >
-            Train fighting (10 cash)
-          </button>
-        </div>
-        <div
-          hidden={true}
-        >
-          <button
-            className="btn btn-danger"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
-          >
-            Resurect
-          </button>
+            <div
+              hidden={true}
+            >
+              <button
+                className="btn btn-danger"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Resurect
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
