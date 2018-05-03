@@ -67,6 +67,14 @@ const Actions = props => {
     },
     {
       callback: () => {
+        props.game.player.train();
+      },
+      text: "Train fighting (10 cash)",
+      isDisabled: !props.game.player.canTrain(),
+      style: "success"
+    },
+    {
+      callback: () => {
         props.game.player.resurect();
       },
       text: "Resurect",
