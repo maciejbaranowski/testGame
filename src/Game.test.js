@@ -12,15 +12,21 @@ describe("Player operations", () => {
   });
 
   it("conducts simple fight", () => {
-    game.player.fight();
-    expect(game.player.cash).toEqual(12);
+    game.player.fight(game.getNewMonster("lama"));
+    expect(game.player.cash).toEqual(14);
     expect(game.player.health).toBeLessThan(100);
-    expect(game.log.pop()).toContain("Fight is over");
+    expect(game.log.pop()).toContain("Fight");
+  });
+
+  it("conducts fight with unknown monster", () => {
+    game.player.fight(game.getNewMonster("blahblah"));
+    expect(game.player.health).toBeLessThan(100);
+    expect(game.log.pop()).toContain("Unknown creature");
   });
 
   it("changes state to dead", () => {
     game.player.health = 1;
-    game.player.fight();
+    game.player.fight(game.getNewMonster("lama"));
     expect(game.player.status).toContain("dead");
     expect(game.player.canFight()).toBeFalsy();
   });

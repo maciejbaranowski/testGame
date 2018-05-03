@@ -55,16 +55,35 @@ Action.propTypes = {
 };
 
 const Actions = props => {
+  const definitions = [
+    {
+      callback: () => {
+        props.updateGame(props.game.player.fight(props.game.getNewMonster("lama")));
+      },
+      text: "Fight Lama",
+      isDisabled: !props.game.player.canFight()
+    },
+    {
+      callback: () => {
+        props.updateGame(props.game.player.fight(props.game.getNewMonster("bear")));
+      },
+      text: "Fight Bear",
+      isDisabled: !props.game.player.canFight()
+    },
+    {
+      callback: () => {
+        props.updateGame(props.game.player.fight(props.game.getNewMonster("dragon")));
+      },
+      text: "Fight Dragon",
+      isDisabled: !props.game.player.canFight()
+    },
+  ];
   return (
     <div>
       <h3>Actions:</h3>
-      <Action
-        callback={() => {
-          props.updateGame(props.game.player.fight());
-        }}
-        text={"Fight!"}
-        isDisabled={!props.game.player.canFight()}
-      />
+      {definitions.map((def, i) => {
+        return <Action key={i} {...def} />;
+      })}
     </div>
   );
 };
@@ -78,8 +97,8 @@ const Log = props => (
   <div>
     <h3>Game log:</h3>
     <ListGroup>
-      {props.log.map(logText => {
-        return <ListGroupItem>{logText}</ListGroupItem>;
+      {props.log.map((logText, i) => {
+        return <ListGroupItem key={i}>{logText}</ListGroupItem>;
       })}
     </ListGroup>
   </div>

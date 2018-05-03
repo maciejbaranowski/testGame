@@ -68,7 +68,27 @@ exports[`renders as before 1`] = `
             onClick={[Function]}
             type="button"
           >
-            Fight!
+            Fight Lama
+          </button>
+        </div>
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Fight Bear
+          </button>
+        </div>
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Fight Dragon
           </button>
         </div>
       </div>
