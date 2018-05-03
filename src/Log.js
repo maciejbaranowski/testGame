@@ -1,9 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  ListGroup,
-  ListGroupItem
-} from "react-bootstrap";
+import { ListGroup, ListGroupItem } from "react-bootstrap";
 
 const Log = props => (
   <div>
@@ -16,7 +13,7 @@ const Log = props => (
   </div>
 );
 Log.propTypes = {
-  log : PropTypes.array.isRequired
-}
+  log: PropTypes.array.isRequired
+};
 
 export default Log;

@@ -1,11 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  ProgressBar,
-  Badge,
-  Alert,
-  Fade,
-} from "react-bootstrap";
+import { ProgressBar, Badge, Alert, Fade } from "react-bootstrap";
 
 const PlayerStats = props => (
   <div>

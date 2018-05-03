@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Row,
-  Col
-} from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
 import Game from "./Game";
-import PlayerStats from "./PlayerStats"
-import Actions from "./Actions"
-import Log from "./Log"
+import PlayerStats from "./PlayerStats";
+import Actions from "./Actions";
+import Log from "./Log";
 
 class App extends Component {
   constructor() {
@@ -21,11 +17,7 @@ class App extends Component {
       <Grid className="App">
         <Row>
           <Col md={4}>
-            <PlayerStats
-              health={this.state.game.player.health}
-              cash={this.state.game.player.cash}
-              status={this.state.game.player.status}
-            />
+            <PlayerStats {...this.state.game.player} />
           </Col>
           <Col md={4}>
             <Actions
